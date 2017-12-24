@@ -1,5 +1,5 @@
-angular.module('descubraManaus')
-.controller('welcomeCtrl', function ($scope, $state, $cookieStore) {
+angular.module('pornoite')
+.controller('loginCtrl', function ($scope, $state, $cookieStore) {
 
     /**
      * SOCIAL LOGIN
@@ -30,10 +30,10 @@ angular.module('descubraManaus')
                     user.name = response.name;
                     user.email = response.email;
                     user.gender = response.gender;
-                    
+
                     user.profilePic = picResponse.data.url;
                     $cookieStore.put('userInfo', user);
-                    $state.go('app.listagem');
+                    $state.go('app.map');
 
                 });
             });
@@ -73,11 +73,11 @@ angular.module('descubraManaus')
                     user.gender = resp.gender;
                     user.placesLived = resp.placesLived[0].value;
                     console.log(resp.placesLived);
-                    
+
                     user.profilePic = resp.image.url;
                    // console.log(user);
                     $cookieStore.put('userInfo', user);
-                    $state.go('app.listagem');
+                    $state.go('app.map');
                 });
             }
         }
@@ -90,7 +90,7 @@ angular.module('descubraManaus')
 .controller('dashboardCtrl', function ($scope, $window, $state, $cookieStore) {
     // Set user details
     $scope.user = $cookieStore.get('userInfo');
-    
+
     // Logout user
     $scope.logout = function () {
         $cookieStore.remove("userInfo");
@@ -98,5 +98,3 @@ angular.module('descubraManaus')
         $window.location.reload();
     };
 });
-
-

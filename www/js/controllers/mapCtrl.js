@@ -1,31 +1,17 @@
-angular.module('descubraManaus')
-.controller('listagemCtrl', function($scope, $state, $cordovaGeolocation,
- estabelecimentoAPI, $rootScope) {
+angular.module('pornoite')
+.controller('mapCtrl', function($scope, $state, $cordovaGeolocation, $rootScope) {
 
-  	$scope.estabelecimentos = [];
   var tamEst = 0;
   var i = 0;
 
-  function iniciar(){
-    carregarEstabelecimentos();
-  }
-
-  function carregarEstabelecimentos(){
-    estabelecimentoAPI.listarEstabelecimentos().then(function(dados){
-      $scope.estabelecimentos = dados;
-      tamEst = $scope.estabelecimentos.length;
-      //console.log(tamEst);
-    });
-  }
-
   var pin_blue = {
     url:'img/icon_pin_blue.png',
-    scaledSize: new google.maps.Size(25, 25)
+    scaledSize: new google.maps.Size(20, 20)
   }
 
   var pin_red = {
     url:'img/icon_pin_red.png',
-    scaledSize: new google.maps.Size(25, 25)
+    scaledSize: new google.maps.Size(20, 20)
   }
 
   var options = {timeout: 10000, enableHighAccuracy: true};
@@ -36,7 +22,7 @@ angular.module('descubraManaus')
 
     var mapOptions = {
       center: latLng,
-      zoom: 11,
+      zoom: 13,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
@@ -67,7 +53,7 @@ angular.module('descubraManaus')
 
     var latLng = new google.maps.LatLng(latMotelFree, longMotelFree);
 
-    var marker = new google.maps.Marker({
+    var markerMf = new google.maps.Marker({
           map: $scope.map,
           animation: google.maps.Animation.DROP,
           position: latLng,
@@ -87,16 +73,13 @@ angular.module('descubraManaus')
       });
 
 
-  google.maps.event.addListener(marker, 'click', function() {
-        window.location.href = '#/app/detalhes';
+  google.maps.event.addListener(markerMf, 'click', function() {
+        window.location.href = '#/app/details';
       });
 
 
   }, function(error){
     console.log("Não foi possível pegar sua localização, tente novamente!");
   });
-
-
-  iniciar();
 
 });

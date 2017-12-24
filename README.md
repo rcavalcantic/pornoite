@@ -21,5 +21,4 @@ Endpoints:
 - Details
 
 
-Copyright: Black Box Development Team
-# pornoite
+@ Copyright: Black Box Development Team

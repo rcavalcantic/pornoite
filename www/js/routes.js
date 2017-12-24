@@ -1,4 +1,4 @@
-angular.module('descubraManaus')
+angular.module('pornoite')
 .config(function ($stateProvider, $urlRouterProvider) {
     // setup states
     $stateProvider
@@ -6,19 +6,18 @@ angular.module('descubraManaus')
                 url : '/app',
                 templateUrl : 'partials/menu.html',
                 abstract: true,
-                controller: 'menuCtrl'
             })
-            .state('welcome', {
-                url: "/welcome",
-                templateUrl: "partials/welcome.html",
-                controller: 'welcomeCtrl'
+            .state('login', {
+                url: "/login",
+                templateUrl: "partials/login.html",
+                controller: 'loginCtrl'
             })
-            .state('app.listagem', {
-                url : '/listagem',
+            .state('app.map', {
+                url : '/map',
                 views : {
                     'menuContent' : {
-                        templateUrl: "partials/listagem.html",
-                        controller: 'listagemCtrl'
+                        templateUrl: "partials/map.html",
+                        controller: 'mapCtrl'
                     }
                 }
             })
@@ -31,16 +30,15 @@ angular.module('descubraManaus')
                     }
                 }
             })
-            .state('app.detalhes', {
-                url : '/detalhes',
+            .state('app.details', {
+                url : '/details',
                 views : {
                     'menuContent' : {
-                        templateUrl: "partials/detalhes.html",
-                        controller: 'detalheCtrl'
+                        templateUrl: "partials/details.html",
                     }
                 }
             });
-    // default route           
-    $urlRouterProvider.otherwise("/welcome");
+    // default route
+    $urlRouterProvider.otherwise("/login");
 
 });

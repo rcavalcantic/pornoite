@@ -1,5 +1,5 @@
 // App.js
-angular.module('descubraManaus', ['ngCookies', 'ionic', 'ngCordova'])
+angular.module('pornoite', ['ngCookies', 'ionic', 'ngCordova'])
 
 .run(function ($rootScope, $cookieStore, $state) {
     // Check login session
