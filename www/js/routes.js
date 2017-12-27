@@ -30,6 +30,14 @@ angular.module('pornoite')
                     }
                 }
             })
+            .state('app.list', {
+                url : '/list',
+                views : {
+                    'menuContent' : {
+                        templateUrl: "partials/list.html",
+                    }
+                }
+            })
             .state('app.details', {
                 url : '/details',
                 views : {

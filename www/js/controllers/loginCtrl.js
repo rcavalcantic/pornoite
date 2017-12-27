@@ -33,7 +33,7 @@ angular.module('pornoite')
 
                     user.profilePic = picResponse.data.url;
                     $cookieStore.put('userInfo', user);
-                    $state.go('app.map');
+                    $state.go('app.list');
 
                 });
             });
@@ -77,7 +77,7 @@ angular.module('pornoite')
                     user.profilePic = resp.image.url;
                    // console.log(user);
                     $cookieStore.put('userInfo', user);
-                    $state.go('app.map');
+                    $state.go('app.list');
                 });
             }
         }

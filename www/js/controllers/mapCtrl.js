@@ -49,7 +49,9 @@ angular.module('pornoite')
     var latMotelFree = "-3.0859385";
     var longMotelFree = "-60.0674463";
 
-    // -3.0797038,-60.0790476
+    // -3.0797038,-60.0790476 tahiti
+    // -3.0830782,-60.0260996 cobras
+    // 3.1061446,-60.0019439 ce ki sabe
 
     var latLng = new google.maps.LatLng(latMotelFree, longMotelFree);
 
@@ -65,12 +67,34 @@ angular.module('pornoite')
 
     var latLongTahiti = new google.maps.LatLng(latTahiti, longTahiti);
 
-    var marker = new google.maps.Marker({
+    var markerTahiti = new google.maps.Marker({
           map: $scope.map,
           animation: google.maps.Animation.DROP,
           position: latLongTahiti,
           icon: pin_blue
       });
+
+    var latCobras = "-3.0830782";
+    var longCobras = "-60.0260996";
+    var latLongCobras = new google.maps.LatLng(latCobras, longCobras);
+
+    var markerCobras = new google.maps.Marker({
+          map: $scope.map,
+          animation: google.maps.Animation.DROP,
+          position: latLongCobras,
+          icon: pin_blue
+    });
+
+    var latCKS = "-3.1061446";
+    var longCKS = "-60.0019439";
+    var latLongCKS = new google.maps.LatLng(latCKS, longCKS);
+
+    var markerCKS = new google.maps.Marker({
+          map: $scope.map,
+          animation: google.maps.Animation.DROP,
+          position: latLongCKS,
+          icon: pin_blue
+    });
 
 
   google.maps.event.addListener(markerMf, 'click', function() {
